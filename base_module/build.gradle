@@ -58,6 +58,10 @@ dependencies {
     implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.2'
     implementation 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2'
     implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+    // ok http
+    implementation("com.squareup.okhttp3:okhttp:4.0.0")
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     // status bar
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
     // adapter
