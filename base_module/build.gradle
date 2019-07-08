@@ -30,40 +30,59 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    api 'com.android.support:appcompat-v7:28.0.0'
+    api "com.android.support:recyclerview-v7:28.0.0"
+    api "com.android.support:design:28.0.0"
+    api 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     // glide
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    api 'com.github.bumptech.glide:glide:4.9.0'
     kapt 'com.github.bumptech.glide:compiler:4.9.0'
-    implementation ("com.github.bumptech.glide:glide:4.9.0@aar") {
+    api ("com.github.bumptech.glide:glide:4.9.0@aar") {
         transitive = true
     }
-    implementation 'jp.wasabeef:glide-transformations:4.0.1'
+    api 'jp.wasabeef:glide-transformations:4.0.1'
     // If you want to use the GPU Filters
-    implementation 'jp.co.cyberagent.android:gpuimage:2.0.3'
+    api 'jp.co.cyberagent.android:gpuimage:2.0.3'
     // rx java
-    implementation "io.reactivex.rxjava3:rxjava:3.0.0-RC0"
+    api "io.reactivex.rxjava2:rxjava:2.2.6"
+    api("io.reactivex.rxjava2:rxkotlin:2.3.0") {
+        exclude module: 'rxjava'// rxJava
+    }
     // rx android
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api ("io.reactivex.rxjava2:rxandroid:2.1.1"){
+        exclude module: 'rxjava'// rxJava
+    }
     // rx permissions
-    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+    api ("com.github.tbruyelle:rxpermissions:0.10.2"){
+        exclude module: 'rxjava'// rxJava
+    }
     // rx lifecycle
-    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.2.2'
-    implementation 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.2'
-    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+    api ("com.trello.rxlifecycle2:rxlifecycle:2.2.2"){
+        exclude module: 'rxjava'// rxJava
+    }
+    api ("com.trello.rxlifecycle2:rxlifecycle-android:2.2.2"){
+        exclude module: 'rxjava'// rxJava
+    }
+    api ("com.trello.rxlifecycle2:rxlifecycle-components:2.2.2"){
+        exclude group: 'com.android.support' // 内部引入了27.1.1的appcompat-v7包和support-annotations
+    }
     // ok http
-    implementation("com.squareup.okhttp3:okhttp:4.0.0")
+    api("com.squareup.okhttp3:okhttp:4.0.0")
     // retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api "com.squareup.retrofit2:converter-gson:2.4.0"
+    api ("com.squareup.retrofit2:adapter-rxjava2:2.4.0"){
+        exclude module: 'rxjava'// rxJava
+    }
     // status bar
-    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+    api 'com.jaeger.statusbarutil:library:1.5.1'
     // adapter
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
 }

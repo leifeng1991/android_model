@@ -16,7 +16,6 @@ import com.leifeng.base.module.base.App
 /**
  * 单例的吐司
  */
-@RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
 @SuppressLint("ShowToast")
 object ToastManager {
     private var isToastOpen = false

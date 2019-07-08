@@ -2,8 +2,8 @@ package com.leifeng.base.module.net;
 
 import android.net.ParseException;
 import android.util.Log;
+import com.cnlive.module.base.utils.ToastManager;
 import com.google.gson.JsonParseException;
-import com.leifeng.base.utils.ToastUtils;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import org.json.JSONException;
@@ -67,7 +67,7 @@ public abstract class OnRequestListener<T> implements Observer<T> {
 
     public void onFailed(String code, String message) {
         // 错误提示
-        ToastUtils.getInstance().showShortToast(message);
+        ToastManager.showShortToast(message);
     }
 
     protected abstract void onSuccess(T bean);

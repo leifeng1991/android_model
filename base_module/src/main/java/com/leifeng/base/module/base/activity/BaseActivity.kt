@@ -2,9 +2,9 @@ package com.leifeng.base.module.base.activity
 
 import android.content.Context
 import android.os.Bundle
-import com.trello.rxlifecycle2.components.RxActivity
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 
-abstract class BaseActivity : RxActivity() {
+abstract class BaseActivity : RxAppCompatActivity() {
     open lateinit var mContext: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
