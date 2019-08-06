@@ -27,7 +27,7 @@ object ImageLoader {
     @JvmStatic
     @JvmOverloads
     fun loadCircleImageView(imageUrl: String?, imageView: ImageView?, defaultImageRes: Int = -1) {
-        loadOriginalImageView(imageUrl, imageView, defaultImageRes, false, CropCircleTransformation())
+        loadOriginalImageView(imageUrl, imageView, defaultImageRes, false, CropCircleTransformation() as Transformation<Bitmap>?)
     }
 
     /**
