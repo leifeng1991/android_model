@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--        <variable-->
+        <!--            name="user"-->
+        <!--            type="com.leifeng.android.model.databinding.User" />-->
+        <!--        <variable-->
+        <!--            name="user"-->
+        <!--            type="android.databinding.ObservableMap&lt;String, String>" />-->
+        <variable
+            name="user"
+            type="android.databinding.ObservableList&lt;String>" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/mImageView"-->
+        <!--            android:layout_width="100dp"-->
+        <!--            android:layout_height="100dp"-->
+        <!--            android:background="#ff0000"-->
+        <!--            imageUrl="@{user.imageUrl}"/>-->
+
+        <!--        <EditText-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="@{user.name}" />-->
+
+        <!--        <EditText-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="@{user.password}"/>-->
+
+        <ImageView
+            android:id="@+id/mImageView"
+            imageUrl="@{user[0]}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#ff0000" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@={user[1]}' />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user[2]}" />
+
+        <Button
+            android:id="@+id/mLoginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="login" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={user[1]}" />
+
+        <!--        <include layout="@layout/include_databinding"-->
+        <!--            app:user="@{user}"/>-->
+
+        <TextView
+            android:id="@+id/mTextView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/mTextView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:scrollHorizontally="true" />
+    </LinearLayout>
+</layout>

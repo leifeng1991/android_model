@@ -47,44 +47,29 @@ dependencies {
     api ("com.github.bumptech.glide:glide:4.9.0@aar") {
         transitive = true
     }
-    api 'jp.wasabeef:glide-transformations:4.0.1'
+    api 'jp.wasabeef:glide-transformations:4.1.0'
     // If you want to use the GPU Filters
-    api 'jp.co.cyberagent.android:gpuimage:2.0.3'
+//    api 'jp.co.cyberagent.android:gpuimage:2.0.3'
     // rx java
     api "io.reactivex.rxjava2:rxjava:2.2.6"
-    api("io.reactivex.rxjava2:rxkotlin:2.3.0") {
-        exclude module: 'rxjava'// rxJava
-    }
-    // rx android
-    api ("io.reactivex.rxjava2:rxandroid:2.1.1"){
-        exclude module: 'rxjava'// rxJava
-    }
+    api "io.reactivex.rxjava2:rxkotlin:2.3.0"
+    api "io.reactivex.rxjava2:rxandroid:2.1.1"
     // rx permissions
-    api ("com.github.tbruyelle:rxpermissions:0.10.2"){
-        exclude module: 'rxjava'// rxJava
-    }
+    api "com.github.tbruyelle:rxpermissions:0.10.2"
     // rx lifecycle
-    api ("com.trello.rxlifecycle2:rxlifecycle:2.2.2"){
-        exclude module: 'rxjava'// rxJava
-    }
-    api ("com.trello.rxlifecycle2:rxlifecycle-android:2.2.2"){
-        exclude module: 'rxjava'// rxJava
-    }
-    api ("com.trello.rxlifecycle2:rxlifecycle-components:2.2.2"){
-        exclude group: 'com.android.support' // 内部引入了27.1.1的appcompat-v7包和support-annotations
-    }
+    api "com.trello.rxlifecycle2:rxlifecycle:2.2.2"
+    api "com.trello.rxlifecycle2:rxlifecycle-android:2.2.2"
+    api "com.trello.rxlifecycle2:rxlifecycle-components:2.2.2"
     // ok http
-    api("com.squareup.okhttp3:okhttp:4.0.0")
+    api "com.squareup.okhttp3:okhttp:4.0.0"
     // retrofit
     api 'com.squareup.retrofit2:retrofit:2.4.0'
     api "com.squareup.retrofit2:converter-gson:2.4.0"
-    api ("com.squareup.retrofit2:adapter-rxjava2:2.4.0"){
-        exclude module: 'rxjava'// rxJava
-    }
+    api "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
     // status bar
     api 'com.jaeger.statusbarutil:library:1.5.1'
     // adapter
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
     // SmartRefreshLayout
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-31'
     //没有使用特殊Header，可以不加这行
